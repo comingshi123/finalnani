@@ -43,6 +43,7 @@ body {
     padding: 13px;
     position: relative;
     top: 16em;
+    margin-top: -25px;
     z-index: 4;
 }
 
