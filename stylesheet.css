@@ -57,6 +57,7 @@ body {
     backdrop-filter: blur(10px) fixed;
     border-radius: 10x;
     position: relative;
+    top: 16em;
     z-index: 4;
 }
 
