@@ -10,10 +10,6 @@
 <video id="bgVideo" autoplay loop muted>
     <source src="bck2.mp4" type="video/mp4">
 </video>
-
-<audio id="bgMusic"  autoplay loop>
-    <source src="bckm1.mp3" type="audio/mp3">
-</audio>
 <div id="phone-frame2">
     <div class="header"><h1 style="text-align: center; font-size: 30px;">==Converter==</h1>
     
@@ -57,24 +53,10 @@
     <br><br><br>
     <div class="circle">
     <button class="topbtn" onclick="window.location.href='index.html'">Back</button>
-      <button onclick="toggleMusic()" id="musicBtn">Music On</button>
 </div>
 </div>
        
 <script>
-function toggleMusic() {
-    document.getElementById("bgMusic").volume = 0.6;
-    let music = document.getElementById("bgMusic");
-    let btn = document.getElementById("musicBtn");
-    if (music.paused) {
-        music.play();
-        btn.innerHTML = "Music Off";
-  
-    } else {
-        music.pause();
-        btn.innerHTML = "Music On";
- }
-}
    let name =
    localStorage.getItem("savedUser");
             document.getElementById("nnText").innerText = name;
