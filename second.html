@@ -93,27 +93,28 @@ function convert(){
     
     // Converting to decimal
     let convertd = parseInt(numinput, frombase);
-    if(numinput === ""){
+    if (numinput === ""){
         alert("Please Enter a Value.");
         return;
     }
-    if(frombase === 2 && numinput != /^[0-1]+$/){
+    else if (frombase === 2 && !/^[0-1]+$/.test(numinput)){
         alert("Binary only allows 0 and 1");
         return;
     }
-    if (frombase === 10 && numinput != /^[0-9]+$/) {
+    else if (frombase === 10 && !/^[0-9]+$/.test(numinput)) {
         alert("Decimal only allows 0 - 9");
         return;
     }
-    
-    if (frombase === 8 && numinput != /^[0-7]+$/) {
+    else if (frombase === 8 && !/^[0-7]+$/.test(numinput)) {
         alert("Octal only allows 0 - 7");
         return;
     }
-    
-    if (frombase === 16 && numinput != /^[0-9A-F]+$/) {
+    else if (frombase === 16 && !/^[0-9A-Fa-f]+$/.test(numinput)) {
         alert("Hexadecimal only allows 0 - 9 & A - F");
         return;
+    }
+    else {
+        
     }
     // Converting to target base
     let answer = convertd.toString(tobase);
