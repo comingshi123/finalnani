@@ -34,7 +34,7 @@ body {
     
     justify-content: center;
     align-items: center;
-    background: flex;
+    display: flex;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px) fixed;
     border-radius: 10x;
