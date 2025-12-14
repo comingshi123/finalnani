@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" ');
+* {
+    font-family: 'Orbitron', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+.nickname {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.phone-frame {
+    
+    justify-content: center;
+    align-items: center;
+    background: flex;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px) fixed;
+    border-radius: 10x;
+    width: 100%;
+    max-width: 390px;
+    padding: 13px;
+    position: relative;
+    z-index: 4;
+}
+
+#phone-frame2 {
+    border-color: #2836D3;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    padding: 13px;
+    align-items: center;
+    background: flex;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px) fixed;
+    border-radius: 10x;
+    position: relative;
+    z-index: 4;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+}
+
+#frame {
+    width: 78px;
+    height: 75px;
+    overflow: hidden;   
+    margin-top: 10px;
+    border: grey solid;
+    
+}
+
+#frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+}
+.number {
+    width: 45%;
+}
+.gopl {
+    background: deepskyblue;
+    border: 1px white;
+    border-radius: 5px;
+    padding: 12px;
+    width: 65%;
+    border: solid grey 1px;
+}
+
+.selp {
+
+    border-radius: 99px;
+    border: solid 1px grey;
+}
+#answer {
+    border: black 1px solid;
+    width: 90%;
+    background: white;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+#simple-box1, #simple-box2 {
+    width: 65%;
+}   
+
+#input {
+    padding: 3px;
+    border-radius: 3px;
+    width: 90%;
+}
+
+.convert-btn {
+    background: deepskyblue;
+    border-radius: 10px;
+}
+
