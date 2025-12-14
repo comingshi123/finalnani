@@ -25,8 +25,8 @@
         <input type="text" id="nname1" placeholder="Type here...">
         <p id="name2"></p>
         
-    <br>
-        <button onclick="toggleMusic()" id="musicBtn">Music On</button>
+    
+
     <br><br>
       
         <input class="number" id="prof"
@@ -75,19 +75,6 @@ function goBtn() {
 }
 </script>
 <script>
-function toggleMusic() {
-    document.getElementById("bgMusic").volume = 0.4;
-    let music = document.getElementById("bgMusic");
-    let btn = document.getElementById("musicBtn");
-    if (music.paused) {
-        music.play();
-        btn.innerHTML = "Music Off";
-   localStorage.setItem("musicState", "on");
-    } else {
-        music.pause();
-        btn.innerHTML = "Music On";
-    }
-    
 }
    function image() {
     let imagep =
