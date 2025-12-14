@@ -42,6 +42,7 @@ body {
     max-width: 390px;
     padding: 13px;
     position: relative;
+    top: 16em;
     z-index: 4;
 }
 
