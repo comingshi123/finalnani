@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NUMBER SYSTEM CONVERTER</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+           <div class="logo"></div>
+    <video autoplay muted loop id="bgVideo">
+        <source src="bck2.mp4" type="video/mp4">
+    </video>
+    
+    <audio id="bgMusic" autoplay loop>
+        <source src="bckm1.mp3" type="audio/mp3" autoplay loop>
+    </audio>
+      
+    
+    <div class="phone-frame">
+        <h1 style="font-size: 35px">Number System Converter</h1>
+        <div id="nname" class="input" style="font-size: 10px;">Please enter a nickname!</div>
+        <input type="text" id="nname1" placeholder="Type here...">
+        <p id="name2"></p>
+        
+    <br>
+        <button onclick="toggleMusic()" id="musicBtn">Music On</button>
+    <br><br>
+      
+        <input class="number" id="prof"
+        placeholder="Select Profile">
+           <button class ="selp"onclick="image()">Select</button>
+        <p style="text-align: flex;">Select 1 to 3</p>
+        <p id="imagep"></p>
+        <div id="frame">
+            <img id="profimg" src="noimage.png" alt = "" >
+        </div>
+        <p class="body">((==Profile==))</p>
+        
+          <button class="gopl" onclick="goBtn()">Go Convert</button>
+
+    </div>
+    
+        
+    </div>
+        
+
+   <script>
+function goBtn() {
+    let nname = document.getElementById("nname1").value;
+    let prof =
+    document.getElementById("prof").value;
+    let profileimg =
+    document.getElementById("profimg").src;
+    
+    if (nname === "") {
+        alert("Please Input Name")
+        return;
+    } 
+    if (prof === ""){
+        alert("Please Select Profile")
+        return;
+    } 
+    
+    if (profileimg.includes("noimage.png")) {
+        alert("Please press SELECT to confirm profile");
+        return;
+    }
+    localStorage.setItem("savedUser", nname);
+    
+        alert("Go Convert")
+        window.location.href="second.html";
+}
+</script>
+<script>
+function toggleMusic() {
+    document.getElementById("bgMusic").volume = 0.4;
+    let music = document.getElementById("bgMusic");
+    let btn = document.getElementById("musicBtn");
+    if (music.paused) {
+        music.play();
+        btn.innerHTML = "Music Off";
+   localStorage.setItem("musicState", "on");
+    } else {
+        music.pause();
+        btn.innerHTML = "Music On";
+    }
+    
+}
+   function image() {
+    let imagep =
+    document.getElementById("imagep");
+    let prof =
+    document.getElementById("prof").value;
+    let profimg =
+    document.getElementById("profimg");
+    
+    switch (prof){
+        
+    case "1": 
+       profimg.src = "lion.png";
+       localStorage.setItem("savedProf", "lion.png");
+       break;
+    case "2": 
+        profimg.src = "vampire.png"
+        localStorage.setItem("savedProf", "vampire.png");
+       break;
+    case "3":
+        profimg.src = "panda.png"
+        localStorage.setItem("savedProf", "panda.png");
+       break;
+    default:
+    alert("Choose From 1 to 3..");
+    return;
+    }
+}
+</script>
+           <div class="footer">
+       < THIS IS A PROJECT 2025 >
+    </footer>
+    
+</body>
+</html>

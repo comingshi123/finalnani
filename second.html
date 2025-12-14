@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NUMBER SYSTEM CONVERTER</title>
+<link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    
+<div class="logo"></div>
+
+<video id="bgVideo" autoplay loop muted>
+    <source src="bck2.mp4" type="video/mp4">
+</video>
+
+<audio id="bgMusic"  autoplay loop>
+    <source src="bckm1.mp3" type="audio/mp3">
+</audio>
+<div id="phone-frame2">
+    <div class="header"><h1 style="text-align: center; font-size: 30px;">==Converter==</h1>
+    
+    </div>
+     <div id="frame">
+            <img id="profimg" src="noimage.png" alt = "" >
+    
+    </div>
+    <div class="nickname" style ="font-size: 15px;">Hello, <span id="nnText" style="color: red;"></span>
+    <br><br>
+    
+      <label>From:<br></label>
+    <select id="simple-box1">
+        <option value="2">Binary</option>
+        <option value="10">Decimal</option>
+        <option value="8">Octal</option>
+        <option value="16">Hexadecimal</option>
+    </select>
+    
+    <br>
+    
+   <label>To:<br></label>
+    <select id="simple-box2">
+        <option value="2">Binary</option>
+        <option value="10">Decimal</option>
+        <option value="8" >Octal</option>
+        <option value="16">Hexadecimal</option>
+    </select>
+    <br><br>
+        <label>Enter Value:<br></label>
+    <input type="text" id="input" placeholder="Type value...">
+    
+    <div id="convert-btn"></div>
+<br>
+    <button onclick="convert()" class="convert-btn">Convert</button>
+    
+    
+        <br><br>
+        
+    <div id="answer">Answer:</div>
+    <br><br><br>
+    <div class="circle">
+    <button class="topbtn" onclick="window.location.href='index.html'">Back</button>
+      <button onclick="toggleMusic()" id="musicBtn">Music On</button>
+</div>
+</div>
+       
+<script>
+function toggleMusic() {
+    document.getElementById("bgMusic").volume = 0.6;
+    let music = document.getElementById("bgMusic");
+    let btn = document.getElementById("musicBtn");
+    if (music.paused) {
+        music.play();
+        btn.innerHTML = "Music Off";
+  
+    } else {
+        music.pause();
+        btn.innerHTML = "Music On";
+ }
+}
+   let name =
+   localStorage.getItem("savedUser");
+            document.getElementById("nnText").innerText = name;
+        
+    let prof = localStorage.getItem("savedProf");
+
+    if (prof) {
+        document.getElementById("profimg").src = prof;
+    } else {
+        document.getElementById("profimg").src = "noimage.png";
+    }
+function convert(){
+    let frombase = parseInt(document.getElementById("simple-box1").value);
+    let tobase = parseInt(document.getElementById("simple-box2").value);
+    let numinput = document.getElementById("input").value;
+    
+    // Converting to decimal
+    let convertd = parseInt(numinput, frombase);
+    if(numinput === ""){
+        alert("Please Enter a Value.");
+        return;
+    }
+    if(frombase === 2 && numinput != /^[0-1]+$/){
+        alert("Binary only allows 0 and 1");
+        return;
+    }
+    if (frombase === 10 && numinput != /^[0-9]+$/) {
+        alert("Decimal only allows 0 - 9");
+        return;
+    }
+    
+    if (frombase === 8 && numinput != /^[0-7]+$/) {
+        alert("Octal only allows 0 - 7");
+        return;
+    }
+    
+    if (frombase === 16 && numinput != /^[0-9A-F]+$/) {
+        alert("Hexadecimal only allows 0 - 9 & A - F");
+        return;
+    }
+    // Converting to target base
+    let answer = convertd.toString(tobase);
+
+    //Show result
+    document.getElementById("answer").innerHTML = "Answer: " + answer.toUpperCase(); 
+    }
+        </script>
+        <div class="footer">
+       < THIS IS A PROJECT 2025 >
+        </footer>
+</body>
+</html>
