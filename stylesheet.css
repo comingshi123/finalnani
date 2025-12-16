@@ -118,3 +118,8 @@ body {
     transform: translateX(-50%);
     width: 80px;
 }
+#nname1 {
+    border-radius: 10px;
+    border: blue solid 1px;
+    background: white;
+}
